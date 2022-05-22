@@ -1,0 +1,1 @@
+toki = 'kakoy_to_kluch'
