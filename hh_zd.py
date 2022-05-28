@@ -1,13 +1,13 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import pandas as pd
-
+'https://spb.hh.ru/search/vacancy'
 
 main_url = 'https://spb.hh.ru/'
 page_link = '/search/vacancy'
 headers = {"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47"}
 params = {'search_field': ['name', 'company_name', 'description']}
-max_page = 20
+max_page = 10
 
 params['text'] = input('Введите название вакансии: ')
 
@@ -24,7 +24,7 @@ def salary_extraction(vacancy_salary):
         else:
             salary_dict['min'] = int(raw_salary[0] + raw_salary[1])
             salary_dict['max'] = int(raw_salary[3] + raw_salary[4])
-        salary_dict['cur'] = raw_salary
+        salary_dict['cur'] = raw_salary[-1]
 
     return salary_dict
 
