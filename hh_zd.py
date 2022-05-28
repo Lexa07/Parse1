@@ -24,7 +24,7 @@ def salary_extraction(vacancy_salary):
         else:
             salary_dict['min'] = int(raw_salary[0] + raw_salary[1])
             salary_dict['max'] = int(raw_salary[3] + raw_salary[4])
-        salary_dict['cur'] = raw_salary
+        salary_dict['cur'] = raw_salary[-1]
 
     return salary_dict
 
